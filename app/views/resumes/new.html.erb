@@ -1,0 +1,10 @@
+<div class="well">
+  <h3>Submit your resume for <%= @job.title %></h3>
+  <hr>
+  <%= simple_form_for  [@job, @resume], html: { multipart: true } do |f| %>
+    <%= f.input :content %>
+    <%= f.input :attachment %>
+
+    <%= f.submit "Apply" %>
+  <% end %>
+</div>

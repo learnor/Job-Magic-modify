@@ -10,5 +10,6 @@
   <%= simple_format(@job.description) %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<div class="text-center">
+  <%= link_to "Upload Resume", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;" %>
+</div>
