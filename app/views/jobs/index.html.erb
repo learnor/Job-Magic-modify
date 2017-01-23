@@ -1,4 +1,16 @@
 <div class="pull-right">
+  <span class="dropdown">
+    <%= link_to "#", class: "dropdown-toggle btn btn-info", data:{toggle:"dropdown"} do %>
+    Sort_by
+    <b class="caret"></b>
+    <% end %>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Sort by Min Wage", jobs_path(order: 'by_lower_bound') %></li>
+
+      <li><%= link_to "Sort by Max Wage", jobs_path(order: 'by_upper_bound') %> </li>
+      <li><%= link_to "Sort by Post Time", jobs_path %></li>
+    </ul>
+  </span>
   <%= link_to "New Job", new_job_path, class: "btn btn-primary" %>
 </div>
 <h1>Jobs</h1>
