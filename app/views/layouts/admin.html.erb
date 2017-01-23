@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobListingMogai</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'common/navbar' %>
+    <%= render 'common/flashes' %>
+    <div class="container-fluid">
+      <div class="sidebar col-md-2">
+        Sidebar
+      </div>
+      <div class="main col-md-10">
+      <%= yield %>
+      </div>
+    </div>
+    <%= render 'common/footer' %>
+  </body>
+</html>

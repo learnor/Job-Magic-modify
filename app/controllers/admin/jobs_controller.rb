@@ -2,6 +2,7 @@ class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_admin_job, only: [:show, :edit, :update, :destroy]
   before_action :require_is_admin
+  layout "admin"
   def show
   end
 
