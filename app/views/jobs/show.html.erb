@@ -7,7 +7,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @job.description %>
+  <%= simple_format(@job.description) %>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
