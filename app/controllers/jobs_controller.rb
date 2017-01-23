@@ -14,6 +14,10 @@ class JobsController < ApplicationController
   end
 
   def show
+    if @job.is_hidden
+      flash[:warning] = "Job not available."
+      redirect_to :back
+    end
   end
 
   def new

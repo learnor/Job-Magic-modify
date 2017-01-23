@@ -10,7 +10,7 @@
         <th>Description</th>
         <th>Min Salary</th>
         <th>Max Salary</th>
-        <th colspan="2"></th>
+        <th colspan="3"></th>
         <th>Post Time</th>
       </tr>
     </thead>
@@ -27,6 +27,13 @@
           <td><%= job.wage_upper_bound %></td>
           <td><%= link_to 'Edit', edit_admin_job_path(job) %></td>
           <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <% if job.is_hidden %>
+            <%= link_to "Publish", publish_admin_job_path(job), method: :post, class: "btn btn-success" %>
+            <% else %>
+            <%= link_to "Hide", hide_admin_job_path(job), method: :post, class: "btn btn-warning" %>
+            <% end %>
+          </td>
           <td><%= job.created_at.strftime("%D") %></td>
         </tr>
       <% end %>
