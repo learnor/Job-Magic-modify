@@ -38,7 +38,7 @@ class Admin::JobsController < ApplicationController
     @job.destroy
     redirect_to admin_jobs_path, warning: "Job deleted successfully by admin."
   end
-  
+
   private
 
   def set_admin_job
@@ -46,7 +46,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 
 end
