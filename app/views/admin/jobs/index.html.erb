@@ -16,7 +16,10 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td><%= link_to job.title, job %></td>
+          <td>
+            <%= render_job_status(job) %>
+            <%= link_to job.title, job %>
+          </td>
           <td><%= job.description %></td>
           <td><%= link_to 'Edit', edit_admin_job_path(job) %></td>
           <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
