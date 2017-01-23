@@ -38,6 +38,7 @@ class Admin::JobsController < ApplicationController
     @job.destroy
     redirect_to admin_jobs_path, warning: "Job deleted successfully by admin."
   end
+  
   private
 
   def set_admin_job
@@ -48,10 +49,4 @@ class Admin::JobsController < ApplicationController
     params.require(:job).permit(:title, :description)
   end
 
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = "You are not admin"
-      redirect_to :back
-    end
-  end
 end
