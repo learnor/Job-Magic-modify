@@ -1,0 +1,85 @@
+// - - - - - - - - - - - - Varialble Styles - - - - - - - - - - - - - //
+
+$white: #FFFFFF;
+$highlight: #7ac483;
+$grey_background: #e8f1e8;
+$grey_copy: #b9b7c6;
+$dark_grey: #3f3d4e;
+
+// - - - - - - - - - - - - Footer Styles - - - - - - - - - - - - - //
+
+.social {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #555;
+  overflow: hidden;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  i {
+    margin: .3em;
+    cursor: pointer;
+    transition: color 300ms ease, margin-top 300ms ease;
+    transform: translateZ(0);
+
+    &:hover {
+      margin-top: -1px;
+    }
+
+    &.fa-twitter:hover {
+      color: #77DDF6;
+    }
+
+    &.fa-github:hover {
+      color: black;
+    }
+
+    &.fa-facebook:hover {
+      color: #3b5999;
+    }
+
+    &.fa-weixin:hover {
+      color: #09b83e
+    }
+
+    &#linkedin:hover {
+      color: #0177B5;
+    }
+
+    &#code:hover {
+      color: #29A329;
+    }
+
+    &#stack:hover {
+      color: #ED780E;
+    }
+
+    &#plus:hover {
+      color: #D43402;
+    }
+
+    &#mail:hover {
+      color: #F7B401;
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 0;
+  .copyright {
+    text-align: center;
+    font-weight: 700;
+    color: $grey_copy;
+    a {
+    color: $highlight;
+    text-decoration: none;
+    }
+  }
+}

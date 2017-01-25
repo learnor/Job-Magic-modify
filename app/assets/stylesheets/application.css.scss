@@ -17,3 +17,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('http://fonts.googleapis.com/earlyaccess/notosanssc.css');
+
+html  {
+  font-size: 16px;
+}
+body {
+  font-family: "Noto Sans", "Noto Sans SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, sans-serif;
+}

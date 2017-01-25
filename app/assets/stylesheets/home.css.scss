@@ -1,0 +1,249 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// - - - - - - - - - - - - - - - Varialble Styles - - - - - - - - - - - - - - - //
+
+$white: #FFFFFF;
+$highlight: #7ac483;
+$grey_background: #e8f1e8;
+$grey_copy: #b9b7c6;
+$dark_grey: #3f3d4e;
+
+// - - - - - - - - - - - - - - - Global Styles - - - - - - - - - - - - - - - //
+body {
+  font-family: "Noto Sans", "Noto Sans SC", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrapper {
+  width: 1440px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.button {
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  padding: .5rem 3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.button_highlight {
+  background: $highlight;
+}
+
+.button_secondary {
+  background: rgba(250,250,250, 0.35);
+}
+// - - - - - - - - - - - - - - - Global Styles - - - - - - - - - - - - - - - //
+
+#banner {
+  background: linear-gradient(rgba(63, 61, 79, .30),rgba(63, 61, 79, .30)), url('https://ww2.sinaimg.cn/large/006tNc79jw1fc2spcq89gj31kw0retfe.jpg') no-repeat center/cover;
+  // background-repeat: no-repeat center;
+  // background-size: cover;
+
+
+  header {
+    padding: 2rem 0;
+  }
+  #logo {
+    color: $white;
+    font-weight: 700;
+    font-size: 1.35rem;
+    float: left;
+    margin: 0;
+    span {
+      font-weight: 400;
+    }
+  }
+  nav {
+    float: right;
+    a {
+      color: $white;
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 2rem;
+    }
+  }
+  .content {
+    padding: 4rem 0 8rem 0;
+    .title, .sub_title {
+      color: white;
+      text-align: center;
+    }
+    .title {
+      font-size: 3.5rem;
+      margin: 0;
+    }
+    .sub_title {
+      font-weight: 400;
+      font-size: 1.35rem;
+      width: 500px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.75;
+    }
+    .button_wrapper {
+      text-align: center;
+      margin: 3rem, 0;
+    }
+  }
+  footer {
+    padding: 0 0 4rem;
+    text-align: center;
+    i {
+      color: $white;
+      font-weight: 700;
+    }
+  }
+}
+
+
+  // - - - - - - - - - - - - - - - Services Styles - - - - - - - - - - - - - - - //
+
+#services {
+  background: $grey-background;
+  padding: 2rem 0 6.5rem 0;
+  position: relative;
+  .service {
+    background: white;
+    width: 31%;
+    display: inline-block;
+    margin: -5rem 1% 0 1%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+    border-radius: .35rem;
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: $dark_grey;
+    }
+    p {
+      margin: .5rem 0 2rem 0;
+      color: $dark_grey;
+    }
+    .button {
+      padding: .5rem 2rem;
+    }
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 50%;
+      bottom: -50px;
+      height: 50px;
+      border-left: 2px solid #c9c7d3;
+    }
+  }
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 19.85%;
+    bottom: 54px;
+    background: #c9c7d3;
+    height: 2px;
+    width: 60.1%;
+  }
+  .middle {
+    &:after {
+    // content: " ";
+    // position: absolute;
+    //
+    bottom: -105px;
+    height: 105px;
+    // background: #c9c7d3;
+    // background-size: 2px;
+  }
+  }
+}
+
+// - - - - - - - - - - how_it_work Styles - - - - - - - - - - - - //
+
+#how_it_work {
+  background: $dark_grey;
+  padding: 3rem 0 3rem 0;
+  text-align: center;
+  position: relative;
+  .title {
+    color: $white;
+    font-size: 2.5rem;
+    margin: 0 0 .75rem 0;
+  }
+  #carousel {
+    background: $dark_grey;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    position: relative;
+    .item {
+      height: 455px;
+      max-height: 455px;
+      // overflow: hidden;
+      padding: 3rem 0;
+      .inverse {
+        display: inline;
+        background: rgba(250,250,250, 0.5);
+        color: #333333;
+      }
+    }
+  }
+  .step {
+      width: 20%;
+    display: inline-block;
+    margin: 1rem 1%;
+    padding: 2.5%;
+    text-align: center;
+    position: relative;
+    h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: $white;
+    }
+    img {
+      width: 100%;
+      margin: 1rem 2% 0 2%;
+      padding: 2rem 2%;
+    }
+  }
+}
+
+// - - - - - - - - - - Testimonials Styles - - - - - - - - - - - - //
+
+
+#testimony {
+  background: $grey-copy;
+  padding: 5rem 0 5rem 0;
+  text-align: center;
+  position: relative;
+  .title {
+    font-size: 2.5rem;
+    color: $dark_grey;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+  .testimony {
+    background: $grey-background;
+    width: 22.75%;
+    display: inline-block;
+    margin: 0 1% 0;
+    padding: 3rem 1.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+    border-radius: .35rem;
+    img {
+      max-width: 100px;
+      border-radius: 50%;
+    }
+  }
+  .button_wrapper {
+    text-align: center;
+    margin: 4rem 0;
+    display: inline-block;
+
+  }
+}
+// - - - - - - - - - - other - - - - - - - - - - - - //
