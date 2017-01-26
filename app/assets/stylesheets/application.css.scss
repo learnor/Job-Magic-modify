@@ -29,6 +29,14 @@ $grey_copy: #b9b7c6;
 $dark_grey: #3f3d4e;
 
 // - - - - - - - - - - - - - - - Global Styles - - - - - - - - - - - - - - - //
+#navbar {
+  .navbar-trans-white {
+    background-color: rgba(250,250,250,0.8);
+  }
+  .navbar-trans-black {
+    background-color: rgba(0,0,0,0.8);
+  }
+  }
 
 
 html  {
