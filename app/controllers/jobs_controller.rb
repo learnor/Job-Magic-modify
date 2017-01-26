@@ -4,18 +4,26 @@ class JobsController < ApplicationController
 
   def index
     @jobs = case params[:order]
-    when 'by_lower_bound'
-      Job.published.order('wage_lower_bound DESC')
-    when 'by_upper_bound'
-      Job.published.order('wage_upper_bound DESC')
-    else
-      Job.published.recent
+            when 'by_lower_bound'
+              Job.published.order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+              Job.published.order('wage_upper_bound DESC')
+            when 'by_company'
+              Job.published.order('company ASC')
+            when 'by_location'
+              Job.published.order('location ASC')
+            when 'by_category'
+              Job.published.order('category ASC')
+            when 'by_title'
+              Job.published.order('LOWER(title) ASC')
+            else
+              Job.published.recent
     end
   end
 
   def show
     if @job.is_hidden
-      flash[:warning] = "Job not available."
+      flash[:warning] = 'Job not available.'
       redirect_to :back
     end
   end
@@ -33,8 +41,7 @@ class JobsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @job.update(job_params)
@@ -56,6 +63,6 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :company, :location, :category, :contact_email, :is_hidden)
   end
 end

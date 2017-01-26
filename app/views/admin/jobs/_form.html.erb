@@ -1,21 +1,21 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <%= simple_form_for [:admin,@job] do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :wage_lower_bound %>
-        <%= f.input :wage_upper_bound %>
-        <%= f.input :contact_email %>
-        <%= f.input :is_hidden %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-
-  </div>
+    <div class="col-md-8 col-md-offset-2">
+        <%= simple_form_for [:admin,@job] do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+                <%= f.input :title %>
+                <%= f.input :description %>
+                <%= f.input :wage_lower_bound %>
+                <%= f.input :wage_upper_bound %>
+                <%= f.input :location %>
+                <%= f.input :compnay %>
+                <%= f.input :category %>
+                <%= f.input :contact_email %>
+                <%= f.input :is_hidden %>
+            </div>
+            <div class="form-actions">
+                <%= f.button :submit %>
+            </div>
+        <% end %>
+    </div>
 </div>

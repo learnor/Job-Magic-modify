@@ -1,21 +1,21 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <%= simple_form_for(@job) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :wage_lower_bound %>
-        <%= f.input :wage_upper_bound %>
-        <%= f.input :contact_email %>
-        <%= f.input :is_hidden %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-
-  </div>
+    <div class="col-md-8 col-md-offset-2">
+        <%= simple_form_for(@job) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+                <%= f.input :title, placeholder:"Designer" %>
+                <%= f.input :description, placeholder: "Experienced Web/Mobile Designer" %>
+                <%= f.input :wage_lower_bound, placeholder: "30000" , label: "Min Salary:"%>
+                <%= f.input :wage_upper_bound, placeholder: "50000", label: "Max Salary:" %>
+                <%= f.input :location, collection:['Houston','Bejing','Shanghai','Shenzhen'], selected:'Houston' %>
+                <%= f.input :company, placeholder: 'Your Company' %>
+                <%= f.input :category, collection:['Designer','Engineer','Programmer'],selected:'Designer' %>
+                <%= f.input :contact_email, placeholder: "example@yourcompany.com"%>
+                <%= f.input :is_hidden, label: "Publish", checked_value: false, unchecked_value: true %>
+            </div>
+            <div class="form-actions">
+                <%= f.button :submit %>
+            </div>
+        <% end %>
+    </div>
 </div>
