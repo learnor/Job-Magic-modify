@@ -24,12 +24,12 @@
     <table class="table table-hover table-striped">
         <thead>
             <tr>
-                <th><%= link_to "Title", jobs_path(order: 'by_title') %><span class="fa fa-caret-down"></span></th>
-                <th>Description</th>
+                <th><%= sort_link(@q, :title, "Title", default_order: :asc) %></th>
+                <th><%= sort_link(@q, :description, default_order: :asc) %></th>
                 <th>Salary</th>
-                <th><%= link_to "Location", jobs_path(order: 'by_location') %><span class="fa fa-caret-down"></span></th>
-                <th><%= link_to "Company", jobs_path(order: 'by_company') %><span class="fa fa-caret-down"></span></th>
-                <th><%= link_to "Category", jobs_path(order: 'by_category') %><span class="fa fa-caret-down"></span></th>
+                <th><%= sort_link(@q, :location, default_order: :asc) %></th>
+                <th><%= sort_link(@q, :company, default_order: :asc) %></th>
+                <th><%= sort_link(@q, :category, default_order: :asc) %></th>
                 <th colspan="2"></th>
                 <th><%= link_to "Post Time", jobs_path %><span class="fa fa-caret-down"></span></th>
             </tr>
