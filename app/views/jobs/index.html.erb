@@ -10,6 +10,13 @@
             <li><%= link_to "Sort by Post Time", jobs_path %></li>
         </ul>
     </span> -->
+    <div class="search">
+        <%= search_form_for @q do |f| %>
+            <%= f.label :Search %>
+            <%= f.search_field :title_or_description_or_company_or_location_or_category_cont %>
+            <%= f.submit %>
+        <% end %>
+    </div>
     <%= link_to "New Job", new_job_path, class: "btn btn-primary" %>
 </div>
 <h1>Jobs</h1>

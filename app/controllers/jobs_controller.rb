@@ -3,22 +3,25 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @jobs = case params[:order]
-            when 'by_lower_bound'
-              Job.published.order('wage_lower_bound DESC')
-            when 'by_upper_bound'
-              Job.published.order('wage_upper_bound DESC')
-            when 'by_company'
-              Job.published.order('company ASC')
-            when 'by_location'
-              Job.published.order('location ASC')
-            when 'by_category'
-              Job.published.order('category ASC')
-            when 'by_title'
-              Job.published.order('LOWER(title) ASC')
-            else
-              Job.published.recent
-    end
+    @q = Job.published.ransack(params[:q])
+    @jobs = @q.result
+    #
+    # @jobs = case params[:order]
+    #         when 'by_lower_bound'
+    #           Job.published.order('wage_lower_bound DESC')
+    #         when 'by_upper_bound'
+    #           Job.published.order('wage_upper_bound DESC')
+    #         when 'by_company'
+    #           Job.published.order('company ASC')
+    #         when 'by_location'
+    #           Job.published.order('location ASC')
+    #         when 'by_category'
+    #           Job.published.order('category ASC')
+    #         when 'by_title'
+    #           Job.published.order('LOWER(title) ASC')
+    #         else
+    #           Job.published.recent
+    # end
     @jobs = @jobs.paginate(page: params[:page], per_page: 5)
   end
 
