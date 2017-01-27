@@ -24,7 +24,7 @@
                 <th><%= link_to "Company", jobs_path(order: 'by_company') %><span class="fa fa-caret-down"></span></th>
                 <th><%= link_to "Category", jobs_path(order: 'by_category') %><span class="fa fa-caret-down"></span></th>
                 <th colspan="2"></th>
-                <th>Post Time</th>
+                <th><%= link_to "Post Time", jobs_path %><span class="fa fa-caret-down"></span></th>
             </tr>
         </thead>
         <tbody>
@@ -43,5 +43,11 @@
             <% end %>
         </tbody>
     </table>
+    <div class="apple_pagination">
+        <div class="page_info">
+            <%= page_entries_info @jobs %>
+        </div>
+        <%= will_paginate @jobs %>
+    </div>
 </div>
 <br>

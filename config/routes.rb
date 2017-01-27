@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/edit'
+
   devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :jobs
